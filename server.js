@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   if (req.url === '/' && req.method === 'GET') {
     res.writeHead(200);
     res.end(JSON.stringify({
-      mensagem: 'API simples em JS rodando com sucesso.',
+      mensagem: 'API simples em JS rodando com sucesso. teste',
       rotasDisponiveis: {
         "GET /": "Retorna esta mensagem de boas-vindas e a lista de rotas disponíveis.",
         "GET /usuarios": "Retorna a lista completa de usuários cadastrados.",

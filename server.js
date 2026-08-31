@@ -8,7 +8,6 @@ const usuarios = [
 const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
 
-  // Endpoint 1: Raiz da API com a especificação das rotas (GET /)
   if (req.url === '/' && req.method === 'GET') {
     res.writeHead(200);
     res.end(JSON.stringify({
@@ -22,21 +21,18 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Endpoint 2: Listar usuários (GET /usuarios)
   if (req.url === '/usuarios' && req.method === 'GET') {
     res.writeHead(200);
     res.end(JSON.stringify(usuarios));
     return;
   }
 
-  // Endpoint 3: Status da API (GET /status)
   if (req.url === '/status' && req.method === 'GET') {
     res.writeHead(200);
     res.end(JSON.stringify({ status: 'Online', uptime: process.uptime() }));
     return;
   }
 
-  // Rota não encontrada (404)
   res.writeHead(404);
   res.end(JSON.stringify({ erro: 'Endpoint não encontrado' }));
 });

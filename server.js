@@ -65,7 +65,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');
-  iniciarConsumidor();
+  // iniciarConsumidor();
 });
 
 async function iniciarConsumidor() {
